@@ -1,6 +1,7 @@
 from expense import add_expense, show_expenses, delete_expense
 from analysis import total_expense, highest_expense, category_expense
-from budget import set_budget, budget_status
+from budget import set_budget, budget_status 
+from reports import show_report
 
 expenses = []
 budget = 0
@@ -18,7 +19,8 @@ while True:
     print("6. Category Expense")
     print("7. Set Budget")
     print("8. Budget Status")
-    print("9. Exit")
+    print("9. Expense Report")
+    print("10. Exit")
     print("================================")
 
     choice = input("Enter your choice: ")
@@ -39,7 +41,9 @@ while True:
         budget = set_budget()
     elif choice == "8":
         budget_status(budget, expenses)
-    elif choice == "9":
+    elif choice == "9": 
+        show_report(expenses)
+    elif choice == "10":
         print("Thank you for using Smart Expense Tracker.")
         break
     else:
